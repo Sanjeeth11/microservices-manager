@@ -16,6 +16,8 @@
     <groupId>com.organization</groupId>
     <artifactId>managers</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+
 
     <!-- ✅ FIX 2: Add Spring Cloud version -->
     <properties>
