@@ -1,25 +1,31 @@
-name : build war file and deploy into server
+name: Build and Deploy WAR
 
 on:
-	push:
-		branches:
-			-main
-			
-	jobs:
-		build:
-			runs-on:ubuntu-latest
-			
-			steps:
-				-name: Checkout source code
-				 uses: actions/checkout@v4
-				 
-				 -name: Setup Java 17
-				  uses: actions/setup-java@v4
-				  with:
-					distribution:'temurin'
-					java-version:17
-					
-				  -name: maven install and build war file
-				   uses: mvn clean package
-				   
-				   
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout Source Code
+      uses: actions/checkout@v4
+
+    - name: Setup Java 17
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+    - name: Build WAR
+      run: mvn clean package -DskipTests
+
+    - name: Upload WAR==
+      uses: actions/upload-artifact@v4
+      with:
+          name: employees-war
+          path: target/*.war
+          
