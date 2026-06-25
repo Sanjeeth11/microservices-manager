@@ -16,7 +16,7 @@
     <groupId>com.organization</groupId>
     <artifactId>managers</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    	<packaging>war</packaging>
+    <packaging>war</packaging>
 
 
     <!-- ✅ FIX 2: Add Spring Cloud version -->
@@ -92,7 +92,8 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
+
+             <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-tomcat</artifactId>
     <scope>provided</scope>
@@ -110,18 +111,17 @@
 
             <!-- Spring Boot -->
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <annotationProcessorPaths>
-                      <path>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok</artifactId>
-    <version>1.18.30</version>
-</path>
-                    </annotationProcessorPaths>
-                </configuration>
-            </plugin>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <configuration>
+        <annotationProcessorPaths>
+            <path>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.30</version>
+            </path>
+        </annotationProcessorPaths>
+    </configuration>
+</plugin>
 
         </plugins>
     </build>
